@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>exercicio 6-8</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="coisas">
+      <p
+        id="paragraph"
+        style="background-color: white; color: black; font-size: 15px"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris felis
+        tellus, sagittis imperdiet massa quis, convallis viverra urna. Morbi
+        faucibus dolor sed ultricies rhoncus. Proin gravida fringilla enim at
+        tincidunt. Praesent aliquet enim lacus, id pretium lacus cursus quis.
+        Etiam pharetra nulla ut ipsum auctor condimentum. Phasellus ut consequat
+        dolor. Donec vitae turpis ac ipsum mattis tempor. Pellentesque aliquam
+        nisi id lectus vestibulum vestibulum condimentum nec magna. Duis erat
+        nulla, ornare sit amet est ac, tincidunt bibendum ipsum. Sed volutpat
+        elit eu nisl commodo tempus. Vivamus sagittis bibendum lectus non
+        bibendum. Curabitur nec mi lacus. Phasellus laoreet aliquet fermentum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+        condimentum quam a pellentesque blandit. Vestibulum id magna quis orci
+        facilisis gravida ullamcorper et mi. Duis feugiat nisl lacus, et dictum
+        leo commodo eu. In convallis efficitur turpis nec lacinia. Nunc
+        hendrerit vulputate augue, condimentum porta nunc posuere nec. Quisque
+        tristique odio quis auctor iaculis. Morbi hendrerit elementum quam, quis
+        varius est. Maecenas cursus fermentum tortor, ut sollicitudin ipsum
+        aliquam quis. Curabitur pellentesque mauris a arcu porta ornare.
+        Curabitur elementum dui ut laoreet commodo. Vivamus mollis leo turpis,
+        ac pretium odio tincidunt ut. Sed sollicitudin ipsum a nunc fringilla
+        dapibus. Donec hendrerit magna nisl, vel laoreet orci egestas eget.
+        Proin quam enim, malesuada et lobortis nec, tincidunt semper odio.
+        Suspendisse lobortis condimentum eleifend. Mauris eu nisi at libero
+        fermentum sodales. Fusce dapibus mattis mauris at pharetra. Mauris eu
+        porta ante. Cras eget ultricies mauris. Nunc tincidunt erat at diam
+        euismod, nec finibus justo vestibulum. Duis bibendum elit id turpis
+        ultrices imperdiet. Mauris pulvinar eros est.
+      </p>
+    </div>
+
+    <p>Exercicio 6</p>
+    <button type="button" onclick="changeColor(value)" value="font">
+      Font Color
+    </button>
+    <button type="button" onclick="changeColor(value)" value="back">
+      BackGround Color
+    </button>
+
+    <p>Exercicio 7</p>
+    <button type="button" onclick="fontSize(value)" value="plus">plus</button>
+    <button type="button" onclick="fontSize(value)" value="minus">minus</button>
+
+    <p>Exercicio 7</p>
+    <button type="button" onclick="fontStyle(value)" value="upper">upper</button>
+    <button type="button" onclick="fontStyle(value)" value="lower">lower</button>
+
+    <script>
+      function changeColor(target) {
+        var paragrafo = document.getElementById("paragraph");
+
+        if (target == "font") {
+          if (paragrafo.style.color == "black") paragrafo.style.color = "white";
+          else paragrafo.style.color = "black";
+        } else {
+          if (paragrafo.style.backgroundColor == "black")
+            paragrafo.style.backgroundColor = "white";
+          else paragrafo.style.backgroundColor = "black";
+        }
+      }
+
+      function fontSize(action) {
+        var paragrafo = document.getElementById("paragraph");
+        var size = paragrafo.style.fontSize.replace("px", "");
+
+        if (action == "plus") {
+          if (size) {
+            size++;
+            paragrafo.style.fontSize = size + "px";
+          }
+        } else {
+          if (size > 1) {
+            size--;
+            paragrafo.style.fontSize = size + "px";
+          }
+        }
+      }
+
+      function fontStyle(action) {
+        var paragrafo = document.getElementById("paragraph");
+
+        if (action == "upper") 
+            paragrafo.style.textTransform = "uppercase"
+        else 
+            paragrafo.style.textTransform = "lowercase"
+        
+      }
+    </script>
+  </body>
+</html>

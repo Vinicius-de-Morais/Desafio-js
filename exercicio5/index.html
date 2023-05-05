@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>exercicio 5</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <form>
+        <div id="coisas" >
+            <input type="checkbox" onchange="check(this)" value="Alegria">Alegria
+            <input type="checkbox" onchange="check(this)" value="Tristeza">Tristeza
+            <input type="checkbox" onchange="check(this)" value="Confusao">Confusao
+            <input type="checkbox" onchange="check(this)" value="Fome">Fome
+        </div>
+        <button type="submit" id="btn-submit" disabled>Send</button>
+    </form>
+
+    <script>
+        i = 0;
+      function check(input){
+        if(input.hasAttribute("checked")){
+            input.removeAttribute("checked");
+            i--
+        }else{
+            input.setAttribute("checked", true);
+            i++
+        }
+        
+        var btn = document.getElementById("btn-submit");
+        if(i >= 2){
+            btn.removeAttribute("disabled");
+        }else if(!btn.removeAttribute("disabled")){
+            btn.setAttribute("disabled", true);
+        }
+      }
+
+    </script>
+  </body>
+</html>

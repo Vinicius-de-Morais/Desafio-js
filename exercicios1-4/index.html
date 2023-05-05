@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>exercicio 1-4</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <p>Exercicio 1</p>
+    <button onclick="changeColor(value)" value="red">red</button>
+    <button onclick="changeColor(value)" value="blue">blue</button>
+    <button onclick="changeColor(value)" value="yellow">yellow</button>
+    <button onclick="changeColor(value)" value="green">green</button>
+
+    <p>Exercicio 2</p>
+    <a onmouseover="changeColor(id)" id="red">red</a>
+    <a onmouseover="changeColor(id)" id="blue">blue</a>
+    <a onmouseover="changeColor(id)" id="yellow">yellow</a>
+    <a onmouseover="changeColor(id)" id="green">green</a>
+
+    <p>Exercicio 3</p>
+    <input type="radio" onclick="changeColor(value)" value="red" name="radio">red
+    <input type="radio" onclick="changeColor(value)" value="blue" name="radio">blue
+    <input type="radio" onclick="changeColor(value)" value="yellow" name="radio">yellow
+    <input type="radio" onclick="changeColor(value)" value="green" name="radio">green
+    <br>
+    <select onchange="changeColor(value)">
+      <option value="red">red</option>
+      <option value="blue">blue</option>
+      <option value="yellow">yellow</option>
+      <option value="green">green</option>
+    </select>
+
+    <p>Exercicio 4</p>
+    <button onclick="hide()">hide text</button>
+    <p id="text" style="display: block">Um texto muito bacana</p>
+
+    <script>
+      function changeColor(color){
+        document.body.style.backgroundColor = color;
+      }
+
+      function hide(){
+        var p = document.getElementById("text");
+
+        if(p.style.display == "block"){
+          p.style.display = "none"
+        }else{
+          p.style.display = "block"
+        }
+      }
+    </script>
+  </body>
+</html>
